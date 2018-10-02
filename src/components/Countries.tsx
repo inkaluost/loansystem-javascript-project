@@ -10,7 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 
 
-const maat:any[] = [
+ export const maat:any[] = [
   {"ID":"1067","name":"China","population":"1359821466","percentage":"19,66%","position":"1"},
   {"ID":"1068","name":"India","population":"1205624727","percentage":"17,43%","position":"2"},
   {"ID":"1069","name":"United States of America","population":"312237216","percentage":"4,51%","position":"3"},

@@ -6,19 +6,19 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import countries from '../countries';
-
+import {maat} from './Countries';
+console.log ('MAAT',maat)
 import Country from './Country';
 
 interface ICountriesState {
 }
 
 
-class Countries extends React.Component<{}, ICountriesState> {
+class React3_a extends React.Component<{}, ICountriesState> {
   public render() {
     return (
         <Paper>
-          <h1>Countries</h1>
+          <h1>React3_a</h1>
           <Table>
             <TableHead>
               <TableRow>
@@ -37,7 +37,7 @@ class Countries extends React.Component<{}, ICountriesState> {
               </TableRow>
             </TableHead>
             <TableBody>
-              {countries.map(country => <Country prop1={country} />)}
+              {maat.map(country => <Country prop1={country} />)}
             </TableBody>
           </Table>
         </Paper>
