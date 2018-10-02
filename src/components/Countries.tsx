@@ -8,6 +8,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 
+
+
 const maat:any[] = [
   {"ID":"1067","name":"China","population":"1359821466","percentage":"19,66%","position":"1"},
   {"ID":"1068","name":"India","population":"1205624727","percentage":"17,43%","position":"2"},
@@ -67,6 +69,9 @@ function Countries(props) {
               </TableRow>
         </TableHead>
         <TableBody>
+
+
+
             {maat.map(maa => {
               return (
                 <TableRow key={maa.id}>
@@ -88,5 +93,7 @@ function Countries(props) {
 Countries.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
 
 export default withStyles(styles)(Countries);

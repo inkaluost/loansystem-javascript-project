@@ -4,6 +4,7 @@ import React1a_vko35 from './React1a_vko35'
 import React1b_vko35 from './React1b_vko35'
 import Button from'@material-ui/core/Button'
 import Countries from './components/Countries'
+import React3_a from './components/React3_a';
 
 import Clock from './React2a_vko36'
 
@@ -18,6 +19,7 @@ export default () =>
     <React1b_vko35 />
     <Button color="primary">Material UI Test Button</Button>
     <Countries/>
+    <React3_a/>
 
     <Clock />
 
