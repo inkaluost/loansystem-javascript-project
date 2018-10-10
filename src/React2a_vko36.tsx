@@ -22,7 +22,7 @@ public componentDidMount() {
   )
 }
 
- private updateCounter = () => {
+private updateCounter = () => {
    this.setState({counter: this.state.counter +1})
  }
  private componentWillUnmount() {
@@ -35,11 +35,11 @@ public componentDidMount() {
     return (
 
     <div>
-      <button onClick={this.updateCounter}>Increase</button>
-      clock, counter: {this.state.counter}
-      {`tänään on  ${dateNow.getHours()}.${dateNow.getMinutes()}.${dateNow.getSeconds()}.`}
 
-      {typeof window !== 'undefined' && window.toString()}
+      clock
+      {` ${dateNow.getHours()}.${dateNow.getMinutes()}.${dateNow.getSeconds()}.`}
+
+
     </div>
     )
   }

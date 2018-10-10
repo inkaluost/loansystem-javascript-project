@@ -1,9 +1,9 @@
 import Navbar from '../src/components/Navbar';
-import React1a_vko35 from '../src/React1a_vko35';
+import React2a_vko36 from '../src/React2a_vko36';
 
 export default () => (
   <div>
     <Navbar />
-    <React1a_vko35/>
+    <React2a_vko36/>
   </div>
 );

@@ -15,17 +15,11 @@ export default () =>
     </div>
 
     this is home.tsx.{' '}
-    <Link href="/about">
-
-      <a>About</a>
-    </Link>
-    <React1a_vko35 />
-    <React1b_vko35 />
-    <Button color="primary">Material UI Test Button</Button>
-    <Countries />
-    <React3_a />
 
 
-    <Clock />
+
+
+
+
 
   </div>
