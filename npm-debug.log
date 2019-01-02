@@ -1,0 +1,68 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '@material-ui/icons/Mail',
+1 verbose cli   '@material-ui/icons/MoveToInbox' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData @material-ui/icons/Mail
+8 silly fetchPackageMetaData @material-ui/icons/MoveToInbox
+9 silly fetchOtherPackageData @material-ui/icons/Mail
+10 silly cache add args [ '@material-ui/icons/Mail', null ]
+11 verbose cache add spec @material-ui/icons/Mail
+12 silly fetchOtherPackageData @material-ui/icons/MoveToInbox
+13 silly cache add args [ '@material-ui/icons/MoveToInbox', null ]
+14 verbose cache add spec @material-ui/icons/MoveToInbox
+15 silly cache add parsed spec Result {
+15 silly cache add   raw: '@material-ui/icons/Mail',
+15 silly cache add   scope: null,
+15 silly cache add   name: null,
+15 silly cache add   rawSpec: '@material-ui/icons/Mail',
+15 silly cache add   spec: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail',
+15 silly cache add   type: 'local' }
+16 silly cache add parsed spec Result {
+16 silly cache add   raw: '@material-ui/icons/MoveToInbox',
+16 silly cache add   scope: null,
+16 silly cache add   name: null,
+16 silly cache add   rawSpec: '@material-ui/icons/MoveToInbox',
+16 silly cache add   spec: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox',
+16 silly cache add   type: 'local' }
+17 error addLocal Could not install /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail
+18 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
+18 silly fetchPackageMetaData  error for @material-ui/icons/Mail { Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
+18 silly fetchPackageMetaData   errno: -2,
+18 silly fetchPackageMetaData   code: 'ENOENT',
+18 silly fetchPackageMetaData   syscall: 'open',
+18 silly fetchPackageMetaData   path: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail' }
+19 error addLocal Could not install /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox
+20 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox'
+20 silly fetchPackageMetaData  error for @material-ui/icons/MoveToInbox { Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox'
+20 silly fetchPackageMetaData   errno: -2,
+20 silly fetchPackageMetaData   code: 'ENOENT',
+20 silly fetchPackageMetaData   syscall: 'open',
+20 silly fetchPackageMetaData   path: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox' }
+21 silly rollbackFailedOptional Starting
+22 silly rollbackFailedOptional Finishing
+23 silly runTopLevelLifecycles Starting
+24 silly runTopLevelLifecycles Finishing
+25 silly install printInstalled
+26 verbose stack Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
+27 verbose cwd /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app
+28 error Linux 4.15.0-34-generic
+29 error argv "/usr/bin/node" "/usr/bin/npm" "install" "--save" "@material-ui/icons/Mail" "@material-ui/icons/MoveToInbox"
+30 error node v8.10.0
+31 error npm  v3.5.2
+32 error path /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail
+33 error code ENOENT
+34 error errno -2
+35 error syscall open
+36 error enoent ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
+37 error enoent ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
+37 error enoent This is most likely not a problem with npm itself
+37 error enoent and is related to npm not being able to find a file.
+38 verbose exit [ -2, true ]

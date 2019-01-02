@@ -7,6 +7,7 @@ import Countries from './components/Countries'
 import React3_a from './components/React3_a';
 import Navbar from './components/Navbar';
 import Clock from './React2a_vko36'
+import SwipeableTemporaryDrawer from './SideNav'
 
 export default () =>
   <div>
