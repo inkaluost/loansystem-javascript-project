@@ -19,7 +19,28 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
     this.state ={
       data: equipments
     }
-    }
+
+
+    this.renderEditable = this.renderEditable.bind(this);
+  }
+
+  renderEditable(cellInfo) {
+    return (
+      <div
+     style={{ backgroundColor: "#fafafa" }}
+        contentEditable
+        suppressContentEditableWarning
+        onBlur={e => {
+          const data = [...this.state.data];
+          data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+          this.setState({ data });
+        }}
+        dangerouslySetInnerHTML={{
+          __html: this.state.data[cellInfo.index][cellInfo.column.id]
+        }}
+      />
+    );
+  }
 
   public render() {
       const { data } = this.state;
@@ -40,23 +61,27 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
                     accessor: d => d.id,
                     filterMethod: (filter, rows) =>
                             matchSorter(rows, filter.value, { keys: ["id"] }),
-                          filterAll: true
+                          filterAll: true,
+                    Cell: this.renderEditable
                   },
+
                   {
                     Header: "Equipment name",
                     id: "name",
                     accessor: d => d.name,
                     filterMethod: (filter, rows) =>
-                            matchSorter(rows, filter.value, { keys: ["name"] }),
-                          filterAll: true
+                    matchSorter(rows, filter.value, { keys: ["name"] }),
+                    filterAll: true,
+                    Cell: this.renderEditable
                   },
                   {
                     Header: "Description",
                     id: "description",
                     accessor: d => d.description,
                     filterMethod: (filter, rows) =>
-                            matchSorter(rows, filter.value, { keys: ["description"] }),
-                          filterAll: true
+                    matchSorter(rows, filter.value, { keys: ["description"] }),
+                    filterAll: true,
+                    Cell: this.renderEditable
                   }
                 ]
               }
