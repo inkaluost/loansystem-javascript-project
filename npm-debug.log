@@ -1,68 +1,45 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '--save',
-1 verbose cli   '@material-ui/icons/Mail',
-1 verbose cli   '@material-ui/icons/MoveToInbox' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'dev' ]
 2 info using npm@3.5.2
 3 info using node@v8.10.0
-4 silly loadCurrentTree Starting
-5 silly install loadCurrentTree
-6 silly install readLocalPackageData
-7 silly fetchPackageMetaData @material-ui/icons/Mail
-8 silly fetchPackageMetaData @material-ui/icons/MoveToInbox
-9 silly fetchOtherPackageData @material-ui/icons/Mail
-10 silly cache add args [ '@material-ui/icons/Mail', null ]
-11 verbose cache add spec @material-ui/icons/Mail
-12 silly fetchOtherPackageData @material-ui/icons/MoveToInbox
-13 silly cache add args [ '@material-ui/icons/MoveToInbox', null ]
-14 verbose cache add spec @material-ui/icons/MoveToInbox
-15 silly cache add parsed spec Result {
-15 silly cache add   raw: '@material-ui/icons/Mail',
-15 silly cache add   scope: null,
-15 silly cache add   name: null,
-15 silly cache add   rawSpec: '@material-ui/icons/Mail',
-15 silly cache add   spec: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail',
-15 silly cache add   type: 'local' }
-16 silly cache add parsed spec Result {
-16 silly cache add   raw: '@material-ui/icons/MoveToInbox',
-16 silly cache add   scope: null,
-16 silly cache add   name: null,
-16 silly cache add   rawSpec: '@material-ui/icons/MoveToInbox',
-16 silly cache add   spec: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox',
-16 silly cache add   type: 'local' }
-17 error addLocal Could not install /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail
-18 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
-18 silly fetchPackageMetaData  error for @material-ui/icons/Mail { Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
-18 silly fetchPackageMetaData   errno: -2,
-18 silly fetchPackageMetaData   code: 'ENOENT',
-18 silly fetchPackageMetaData   syscall: 'open',
-18 silly fetchPackageMetaData   path: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail' }
-19 error addLocal Could not install /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox
-20 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox'
-20 silly fetchPackageMetaData  error for @material-ui/icons/MoveToInbox { Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox'
-20 silly fetchPackageMetaData   errno: -2,
-20 silly fetchPackageMetaData   code: 'ENOENT',
-20 silly fetchPackageMetaData   syscall: 'open',
-20 silly fetchPackageMetaData   path: '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/MoveToInbox' }
-21 silly rollbackFailedOptional Starting
-22 silly rollbackFailedOptional Finishing
-23 silly runTopLevelLifecycles Starting
-24 silly runTopLevelLifecycles Finishing
-25 silly install printInstalled
-26 verbose stack Error: ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
-27 verbose cwd /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app
-28 error Linux 4.15.0-34-generic
-29 error argv "/usr/bin/node" "/usr/bin/npm" "install" "--save" "@material-ui/icons/Mail" "@material-ui/icons/MoveToInbox"
-30 error node v8.10.0
-31 error npm  v3.5.2
-32 error path /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail
-33 error code ENOENT
-34 error errno -2
-35 error syscall open
-36 error enoent ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
-37 error enoent ENOENT: no such file or directory, open '/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/@material-ui/icons/Mail'
-37 error enoent This is most likely not a problem with npm itself
-37 error enoent and is related to npm not being able to find a file.
-38 verbose exit [ -2, true ]
+4 verbose run-script [ 'predev', 'dev', 'postdev' ]
+5 info lifecycle with-typescript@1.0.0~predev: with-typescript@1.0.0
+6 silly lifecycle with-typescript@1.0.0~predev: no script for predev, continuing
+7 info lifecycle with-typescript@1.0.0~dev: with-typescript@1.0.0
+8 verbose lifecycle with-typescript@1.0.0~dev: unsafe-perm in lifecycle true
+9 verbose lifecycle with-typescript@1.0.0~dev: PATH: /usr/share/npm/bin/node-gyp-bin:/home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle with-typescript@1.0.0~dev: CWD: /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app
+11 silly lifecycle with-typescript@1.0.0~dev: Args: [ '-c', 'next' ]
+12 silly lifecycle with-typescript@1.0.0~dev: Returned: code: 1  signal: null
+13 info lifecycle with-typescript@1.0.0~dev: Failed to exec dev script
+14 verbose stack Error: with-typescript@1.0.0 dev: `next`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/share/npm/lib/utils/lifecycle.js:232:16)
+14 verbose stack     at emitTwo (events.js:126:13)
+14 verbose stack     at EventEmitter.emit (events.js:214:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:126:13)
+14 verbose stack     at ChildProcess.emit (events.js:214:7)
+14 verbose stack     at maybeClose (internal/child_process.js:925:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+15 verbose pkgid with-typescript@1.0.0
+16 verbose cwd /home/inka/GitRepos/WebOhjelmoinnin_jatko/with-typescript-app
+17 error Linux 4.15.0-34-generic
+18 error argv "/usr/bin/node" "/usr/bin/npm" "run" "dev"
+19 error node v8.10.0
+20 error npm  v3.5.2
+21 error code ELIFECYCLE
+22 error with-typescript@1.0.0 dev: `next`
+22 error Exit status 1
+23 error Failed at the with-typescript@1.0.0 dev script 'next'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the with-typescript package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     next
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs with-typescript
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls with-typescript
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
