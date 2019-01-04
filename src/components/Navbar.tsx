@@ -10,9 +10,6 @@ const Navbar: React.SFC<{}> = () => (
     <Toolbar>
       <SwipeableTemporaryDrawer />
       <Link href="/"><Button color="inherit">Home</Button></Link>
-      <Link href="/clock"><Button color="inherit">Clock</Button></Link>
-      <Link href="/countries"><Button color="inherit">Countries</Button></Link>
-      <Link href="/countriesapi"><Button color="inherit">CountriesApi</Button></Link>
     </Toolbar>
   </AppBar>
 )

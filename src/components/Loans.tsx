@@ -3,6 +3,7 @@ import {loans} from '../data';
 import { render } from 'react-dom';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import matchSorter from 'match-sorter'
 
 interface ILoansState {
   loans: any;
@@ -11,7 +12,7 @@ interface ILoansState {
 
 class Loans extends React.Component<{}, ILoansState> {
 
-  
+
   constructor(){
     super()
     this.state ={
@@ -25,25 +26,52 @@ class Loans extends React.Component<{}, ILoansState> {
         <div>
           <ReactTable
             data={data}
+            filterable
+            defaultFilterMethod={(filter, row) =>
+              String(row[filter.id]) === filter.value}
             columns={[
               {
                 Header: "loans ",
                 columns: [
                   {
-                    Header: "equipment id",
-                    accessor: "id"
+                    Header: "Equipment",
+                    id: "equipmentId",
+                    accessor: d => d.equipmentId,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["equipmentId"] }),
+                          filterAll: true
                   },
                   {
-                    Header: " user id",
-                    accessor: "id"
+                    Header: " User ",
+                    id: "id",
+                    accessor: d => d.id,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["id"] }),
+                          filterAll: true
                   },
                   {
                     Header: "Begins",
-                    accessor: "begins"
+                    id: "begins",
+                    accessor: d => d.begins,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["begins"] }),
+                          filterAll: true
                   },
                   {
                     Header: "Ends",
-                    accessor: "ends"
+                    id: "ends",
+                    accessor: d => d.ends,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["ends"] }),
+                          filterAll: true
+                  },
+                  {
+                    Header: "Returned",
+                    id: "returned",
+                    accessor: d => d.returned,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["returned"] }),
+                          filterAll: true
                   }
                 ]
               }

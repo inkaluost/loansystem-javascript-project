@@ -3,6 +3,7 @@ import {users} from '../data';
 import { render } from 'react-dom';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import matchSorter from 'match-sorter';
 
 
 interface IUsersState {
@@ -25,21 +26,39 @@ class Users extends React.Component<{}, IUsersState> {
   <div>
   <ReactTable
     data={data}
+          filterable
+          defaultFilterMethod={(filter, row) =>
+            String(row[filter.id]) === filter.value}
+
     columns={[
+
       {
         Header: "users ",
         columns: [
           {
             Header: " User id",
-            accessor: "id"
+            id: "id",
+            accessor: d => d.id,
+            filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["id"] }),
+                  filterAll: true
+
           },
           {
             Header: " user name",
-            accessor: "name"
+            id: "name",
+            accessor: d => d.name,
+            filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["name"] }),
+                  filterAll: true
           },
           {
             Header: "user email",
-            accessor: "email"
+            id: "email",
+            accessor: d => d.email,
+            filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["email"] }),
+                  filterAll: true
           }
         ]
       }

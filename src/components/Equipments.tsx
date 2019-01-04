@@ -1,6 +1,7 @@
 import React from 'react';
 import {equipments} from '../data';
 import { render } from "react-dom";
+import matchSorter from "match-sorter";
 
 // Import React Table
 import ReactTable from "react-table";
@@ -26,21 +27,36 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
         <div>
           <ReactTable
             data={data}
+            filterable
+            defaultFilterMethod={(filter, row) =>
+              String(row[filter.id]) === filter.value}
             columns={[
               {
-                Header: "equipment",
+                Header: "Equipment ",
                 columns: [
                   {
-                    Header: "equipment id",
-                    accessor: "id"
+                    Header: "Equipment id" ,
+                    id: "id",
+                    accessor: d => d.id,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["id"] }),
+                          filterAll: true
                   },
                   {
-                    Header: "equipment name",
-                    accessor: "name"
+                    Header: "Equipment name",
+                    id: "name",
+                    accessor: d => d.name,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["name"] }),
+                          filterAll: true
                   },
                   {
                     Header: "Description",
-                    accessor: "description"
+                    id: "description",
+                    accessor: d => d.description,
+                    filterMethod: (filter, rows) =>
+                            matchSorter(rows, filter.value, { keys: ["description"] }),
+                          filterAll: true
                   }
                 ]
               }
