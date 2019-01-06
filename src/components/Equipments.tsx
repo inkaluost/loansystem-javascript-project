@@ -6,6 +6,7 @@ import matchSorter from "match-sorter";
 // Import React Table
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import Button from '@material-ui/core/Button';
 
 interface IEquipmentsState {
   equipments: any;
@@ -23,6 +24,26 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
 
     this.renderEditable = this.renderEditable.bind(this);
   }
+
+
+
+  deleteRow(id) {
+    console.log("Pressed");
+  const index = equipments.findIndex(equipment=>{
+    return equipment.id === id
+  })
+  if (window.confirm("Do you want to remove this row?")){
+    equipments.splice(index, 1)
+    this.setState({ equipments })
+  }
+  }
+
+  addRow(){
+    const newData = { id: 'ID', name: 'NAME', description: 'DESCRIPTION'};
+    equipments.push(newData);
+    this.setState({ equipments });
+  }
+
 
   renderEditable(cellInfo) {
     return (
@@ -46,6 +67,9 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
       const { data } = this.state;
       return (
         <div>
+        <Button onClick={() =>{ this.addRow();}}>
+        ADD NEW
+        </Button>
           <ReactTable
             data={data}
             filterable
@@ -82,7 +106,21 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
                     matchSorter(rows, filter.value, { keys: ["description"] }),
                     filterAll: true,
                     Cell: this.renderEditable
+                  },
+                  //muokkaa
+                  {
+                    Header: "Actions",
+                    Cell: props=>{
+                      return(
+                        <Button className=""
+                        onClick={() =>{
+                          this.deleteRow(props.original.id);
+                        }}
+                        >Delete</Button>
+                      )
+                    }
                   }
+                  //älä ylitä
                 ]
               }
             ]}
