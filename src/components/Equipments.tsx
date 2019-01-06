@@ -16,10 +16,10 @@ interface IEquipmentsState {
 class Equipments extends React.Component<{}, IEquipmentsState> {
 
   constructor(){
-    super()
+    super();
     this.state ={
       data: equipments
-    }
+    };
 
 
     this.renderEditable = this.renderEditable.bind(this);
@@ -28,13 +28,14 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
 
 
   deleteRow(id) {
-    console.log("Pressed");
+    
   const index = equipments.findIndex(equipment=>{
     return equipment.id === id
   })
   if (window.confirm("Do you want to remove this row?")){
     equipments.splice(index, 1)
     this.setState({ equipments })
+    console.log("equipments",equipments)
   }
   }
 
@@ -84,8 +85,8 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
                     id: "id",
                     accessor: d => d.id,
                     filterMethod: (filter, rows) =>
-                            matchSorter(rows, filter.value, { keys: ["id"] }),
-                          filterAll: true,
+                    matchSorter(rows, filter.value, { keys: ["id"] }),
+                    filterAll: true,
                     Cell: this.renderEditable
                   },
 
@@ -107,12 +108,13 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
                     filterAll: true,
                     Cell: this.renderEditable
                   },
-                  //muokkaa
+
                   {
-                    Header: "Actions",
+
                     Cell: props=>{
                       return(
-                        <Button className=""
+                        <Button
+
                         onClick={() =>{
                           this.deleteRow(props.original.id);
                         }}
@@ -120,7 +122,7 @@ class Equipments extends React.Component<{}, IEquipmentsState> {
                       )
                     }
                   }
-                  //älä ylitä
+
                 ]
               }
             ]}

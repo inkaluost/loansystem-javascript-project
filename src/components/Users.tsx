@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import matchSorter from 'match-sorter';
+import Button from '@material-ui/core/Button';
 
 
 interface IUsersState {
@@ -20,6 +21,24 @@ class Users extends React.Component<{}, IUsersState> {
     }
     this.renderEditable=this.renderEditable.bind(this);
     }
+    deleteRow(id) {
+
+    const index = users.findIndex(users=>{
+      return users.id === id
+    })
+    if (window.confirm("Do you want to remove this row?")){
+      users.splice(index, 1)
+      this.setState({ users })
+
+    }
+    }
+
+    addRow(){
+      const newData = { id: 'ID', name: 'NAME', email: 'EMAIL'};
+      users.push(newData);
+      this.setState({ users });
+    }
+
     renderEditable(cellInfo) {
       return (
         <div
@@ -42,6 +61,9 @@ class Users extends React.Component<{}, IUsersState> {
     const { data } = this.state;
     return (
   <div>
+  <Button onClick={() =>{ this.addRow();}}>
+  ADD NEW
+  </Button>
   <ReactTable
     data={data}
           filterable
@@ -82,6 +104,19 @@ class Users extends React.Component<{}, IUsersState> {
             filterAll: true,
             Cell: this.renderEditable
 
+          },
+          {
+
+            Cell: props=>{
+              return(
+                <Button
+
+                onClick={() =>{
+                  this.deleteRow(props.original.id);
+                }}
+                >Delete</Button>
+              )
+            }
           }
         ]
       }

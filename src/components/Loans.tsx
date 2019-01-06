@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import matchSorter from 'match-sorter'
+import Button from '@material-ui/core/Button';
 
 interface ILoansState {
   loans: any;
@@ -17,10 +18,29 @@ class Loans extends React.Component<{}, ILoansState> {
     super()
     this.state ={
       data: loans
-    }
+    };
     this.renderEditable = this.renderEditable.bind(this);
 
     }
+
+      deleteRow(id) {
+
+      const index = loans.findIndex(loans=>{
+        return loans.id === id
+      })
+      if (window.confirm("Do you want to remove this row?")){
+        loans.splice(index, 1)
+        this.setState({ loans })
+
+      }
+      }
+
+      addRow(){
+        const newData = { id: 'ID', equipmentId: 'EQUIPMENT ID', userId: 'USER ID', begins: 'BEGINS', ends: 'ENDS', returned: 'RETURNED' };
+        loans.push(newData);
+        this.setState({ loans });
+      }
+
     renderEditable(cellInfo) {
       return (
         <div
@@ -43,6 +63,9 @@ class Loans extends React.Component<{}, ILoansState> {
       const { data } = this.state;
       return (
         <div>
+        <Button onClick={() =>{ this.addRow();}}>
+        ADD NEW
+        </Button>
           <ReactTable
             data={data}
             filterable
@@ -96,7 +119,21 @@ class Loans extends React.Component<{}, ILoansState> {
                     matchSorter(rows, filter.value, { keys: ["returned"] }),
                     filterAll: true,
                     Cell: this.renderEditable
+                  },
+                  {
+
+                    Cell: props=>{
+                      return(
+                        <Button
+
+                        onClick={() =>{
+                          this.deleteRow(props.original.id);
+                        }}
+                        >Delete</Button>
+                      )
+                    }
                   }
+
                 ]
               }
             ]}
